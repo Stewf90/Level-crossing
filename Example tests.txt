@@ -1,0 +1,413 @@
+Light topLeft = new Light();
+Light topRight  = new Light();
+Light bottom = new Light();
+
+LevelCrossingController lcc = new LevelCrossingController(topLeft, topRight, bottom);
+lcc.colourAllLights();
+lcc.changeState();
+lcc.state = 2;
+lcc.findNumRepeats();
+
+
+Light topLeft = new Light();
+Light topRight  = new Light();
+Light bottom = new Light();
+LevelCrossingController lcc = new LevelCrossingController(topLeft, topRight, bottom);
+lcc.findNumRepeats();
+
+===========
+
+   if (Integer.parseInt(timesAsString) > MIN_REPEATS)
+         {
+            repeats = Integer.parseInt(timesAsString);
+         }
+         else if (Integer.parseInt(timesAsString) < MIN_REPEATS) 
+         {
+            OUDialog.alert("Entered integer is too low. Only numbers 4 and over are allowed");
+         
+         }
+       
+
+=============
+CLOSEST TO WORKING VERSION 
+
+
+int repeats = 0;
+      
+        String timesAsString =              
+          OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+        
+          
+          
+           if (timesAsString == null)
+        {
+          return 0;
+        }   
+           try 
+         {
+            repeats = Integer.parseInt(timesAsString);
+         }
+         
+         catch (NumberFormatException anException)
+         {
+          OUDialog.alert("The string you entered is not an appropriate integer");         
+          timesAsString = OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+         
+         
+         }
+        
+        while (timesAsString != null)
+        if (Integer.parseInt(timesAsString) >= MIN_REPEATS)
+         {
+            repeats = Integer.parseInt(timesAsString);
+            return repeats;
+         }
+         else if (Integer.parseInt(timesAsString) < MIN_REPEATS) 
+         {
+            OUDialog.alert("Entered integer is too low. Only numbers 4 and over are allowed");
+            timesAsString = OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+         }
+        
+        return repeats;
+    
+    } 
+
+================
+BOTH PROBLEMS WORK IF THEY ARE ABOVE THE OTHER
+
+
+ int repeats = 0;
+      
+        String timesAsString =              
+          OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+        
+          boolean anExcept = true;
+          
+           if (timesAsString == null)
+        {
+          return 0;
+        }  
+        while (timesAsString != null)
+        if (Integer.parseInt(timesAsString) >= MIN_REPEATS)
+         {
+            repeats = Integer.parseInt(timesAsString);
+            return repeats;
+         }
+         else if (Integer.parseInt(timesAsString) < MIN_REPEATS) 
+         {
+            OUDialog.alert("Entered integer is too low. Only numbers 4 and over are allowed");
+            timesAsString = OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+         }
+        
+        
+        while (anExcept = true)   
+        try 
+         {
+            repeats = Integer.parseInt(timesAsString);
+            anExcept = false;
+         }
+         
+         catch (NumberFormatException anException)
+         {
+          OUDialog.alert("The string you entered is not an appropriate integer");    
+          anExcept = true;
+          timesAsString = OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+         }
+        
+       
+        
+        return repeats;
+
+=============
+
+      repeats = Integer.parseInt(timesAsString);
+        
+       while (repeats > MIN_REPEATS)   
+       
+       OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+          
+       ===================
+
+    while (repeat)
+        {
+        try 
+         {
+            repeats = Integer.parseInt(timesAsString);
+            repeat = false;
+         }
+         
+         catch (NumberFormatException anException)
+         {
+          OUDialog.alert("The string you entered is not an appropriate integer");
+          repeat = OUDialog.confirm("Would you like to enter a new integer?");
+         }
+         
+      }
+
+======================
+
+ while (repeat == true)
+        {   
+        try 
+         {
+            repeats = Integer.parseInt(timesAsString);
+         }
+         
+         catch (NumberFormatException anException)
+         {
+          OUDialog.alert("The string you entered is not an appropriate integer");
+          repeat = false;
+          repeat = OUDialog.confirm("Would you like to enter a new integer?");
+         }
+      
+       
+      if ((timesAsString == null) && (repeat == false))
+        {
+          return 0;
+        }
+        else if (Integer.parseInt(timesAsString) >= MIN_REPEATS)
+         {
+            repeats = Integer.parseInt(timesAsString);
+            return repeats;
+         }
+         else if (Integer.parseInt(timesAsString) < MIN_REPEATS) 
+         {
+            OUDialog.alert("Entered integer is too low. Only numbers 4 and over are allowed");
+            timesAsString = OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+         }
+      }
+        return repeats;
+
+    } 
+
+==================
+
+ int repeats = 0;
+      
+        String timesAsString =              
+          OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+        
+          boolean repeat = true;
+          
+        while (repeat == true)
+        {   
+        try 
+         {
+            repeats = Integer.parseInt(timesAsString);
+         }
+         
+         catch (NumberFormatException anException)
+         {
+          OUDialog.alert("The string you entered is not an appropriate integer");
+          repeat = false;
+          repeat = OUDialog.confirm("Would you like to enter a new integer?");
+         }
+      
+       
+      if ((timesAsString == null) && (repeat == false))
+        {
+          return 0;
+        }
+        else if (Integer.parseInt(timesAsString) >= MIN_REPEATS)
+         {
+            repeats = Integer.parseInt(timesAsString);
+            return repeats;
+         }
+         else if (Integer.parseInt(timesAsString) < MIN_REPEATS) 
+         {
+            OUDialog.alert("Entered integer is too low. Only numbers 4 and over are allowed");
+            timesAsString = OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+         }
+      }
+        return repeats;
+
+    } 
+
+===================
+
+boolean anExcept = true;
+          
+           if (timesAsString == null)
+        {
+          return 0;
+        }  
+        
+        
+        while ((anExcept = true) && (timesAsString != null))
+        {
+            try 
+         {
+            repeats = Integer.parseInt(timesAsString);
+         }
+        
+         catch (NumberFormatException anException)
+         {
+          OUDialog.alert("The string you entered is not an appropriate integer");
+            timesAsString = OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+         }
+      }
+           
+           if (Integer.parseInt(timesAsString) >= MIN_REPEATS)
+         {
+            repeats = Integer.parseInt(timesAsString);
+            return repeats;
+         }
+         else if (Integer.parseInt(timesAsString) < MIN_REPEATS) 
+         {
+            OUDialog.alert("Entered integer is too low. Only numbers 4 and over are allowed");
+            timesAsString = OUDialog.request("How many times should the red lights"
+          + " flash? ("
+          + LevelCrossingController.MIN_REPEATS
+          + " or over times)");
+         }
+        
+        else {
+          anExcept = OUDialog.confirm("Would you like to enter another integer");
+      }
+      return repeats;
+
+==========================
+
+    int repeats = 0;
+ 
+      String timesAsString =              
+         OUDialog.request("How many times should the red lights"
+            + " flash? ("
+            + LevelCrossingController.MIN_REPEATS
+            + " or over times)");
+
+      boolean error = true;         
+      if (timesAsString == null)
+      {
+         return 0;
+      }
+      try
+      {
+         Integer.parseInt(timesAsString);
+      }
+      catch (NumberFormatException anException)
+      {
+         error = true;
+         OUDialog.alert("The string you entered is not an appropriate integer");
+         timesAsString = OUDialog.request("How many times should the red lights"
+            + " flash? ("
+            + LevelCrossingController.MIN_REPEATS
+            + " or over times)");   
+      }
+      while ((timesAsString != null) && (error == true)){
+         System.out.println("For testing purposes, passed to while loop");
+         if (Integer.parseInt(timesAsString) >= MIN_REPEATS)
+         {
+            error = false;
+            repeats = Integer.parseInt(timesAsString);
+            return repeats;
+         }
+
+         else if (Integer.parseInt(timesAsString) < MIN_REPEATS) 
+         {
+            OUDialog.alert("Entered integer is too low. Only numbers 4 and over are allowed");
+            error = true;
+            timesAsString = OUDialog.request("How many times should the red lights"
+               + " flash? ("
+               + LevelCrossingController.MIN_REPEATS
+               + " or over times)");   
+         }
+         else { 
+
+            try
+            {
+               Integer.parseInt(timesAsString);
+            }
+            catch (NumberFormatException anException)
+            {
+               error = true;
+               OUDialog.alert("The string you entered is not an appropriate integer");
+               timesAsString = OUDialog.request("How many times should the red lights"
+                  + " flash? ("
+                  + LevelCrossingController.MIN_REPEATS
+                  + " or over times)");   
+            }
+         }
+      }
+      return repeats;
+   }
+
+=======================
+
+boolean anIssue = false;
+      if (timesAsString == null)
+      {
+         return 0;
+      }
+      anIssue = true;
+      while ((timesAsString != null) && (anIssue == false)){
+         System.out.println("For testing purposes, passed to while loop");
+         if (Integer.parseInt(timesAsString) >= MIN_REPEATS)
+         {
+           
+            repeats = Integer.parseInt(timesAsString);
+            return repeats;
+         }
+
+         else if (Integer.parseInt(timesAsString) < MIN_REPEATS) 
+         {
+            OUDialog.alert("Entered integer is too low. Only numbers 4 and over are allowed");
+            
+            timesAsString = OUDialog.request("How many times should the red lights"
+               + " flash? ("
+               + LevelCrossingController.MIN_REPEATS
+               + " or over times)");   
+         }
+      }
+      
+      
+      while (anIssue = true) {
+         System.out.println("In issue loop");
+        try
+            {
+               Integer.parseInt(timesAsString);
+               anIssue = false;
+            }
+            catch (NumberFormatException anException)
+            {
+               anIssue = true;
+               OUDialog.alert("The string you entered is not an appropriate integer");
+               timesAsString = OUDialog.request("How many times should the red lights"
+                  + " flash? ("
+                  + LevelCrossingController.MIN_REPEATS
+                  + " or over times)");   
+            }    
+         }return repeats;

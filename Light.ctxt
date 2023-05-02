@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Light()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Light\r\n
+comment1.params=colour
+comment1.target=void\ setColour(ou.OUColour)
+comment1.text=\r\n\ setColour\ sets\ the\ colour\ of\ the\ light\ if\ the\ argument\ is\ OUColour.RED,\ \r\n\ OUColour.GREEN,\ OUColour.ORANGE\ or\ OUColour.BLACK.\ \r\n\ Otherwise\ it\ does\ not\ change\ the\ colour\ \r\n
+numComments=2
